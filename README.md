@@ -37,7 +37,9 @@ Sistema completo de **Machine Learning** con arquitectura **MLOps** para anális
 El proyecto sigue una estructura basada en **MLOps y pipelines modulares**:
 
 DVC_Local_Repo #Configuracion del versionado DVC
+
 │
+
 covid19df/
 
 │
