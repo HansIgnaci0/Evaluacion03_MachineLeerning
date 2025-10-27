@@ -1,0 +1,62 @@
+schema: '2.0'
+stages:
+  train_regression:
+    cmd: kedro run --pipeline regresion
+    deps:
+    - path: conf/base/catalog.yml
+      hash: md5
+      md5: 1e893f4c0f8de786553137a3d1259210
+      size: 2197
+    - path: data/01_raw
+      hash: md5
+      md5: 10527a9c9e898c6b062b9bf3a3d0d242.dir
+      size: 77971900
+      nfiles: 12
+    - path: data/03_intermediate
+      hash: md5
+      md5: d04923e7750ce32069847ed4a2e7734e.dir
+      size: 72961144
+      nfiles: 3
+    - path: src/covid19df/pipelines/regresion/nodes.py
+      hash: md5
+      md5: f8f74d2ae977a6b29afcbe7d1e260221
+      size: 6735
+    outs:
+    - path: data/05_train/regression_comparison.csv
+      hash: md5
+      md5: f0a4bf2324b207baee85b5101b3c93da
+      size: 772
+    - path: data/05_train/regression_comparison.png
+      hash: md5
+      md5: 6954cb7e19141b6736d575697cc7a958
+      size: 74806
+  train_classification:
+    cmd: kedro run --pipeline clasificacion
+    deps:
+    - path: conf/base/catalog.yml
+      hash: md5
+      md5: 1e893f4c0f8de786553137a3d1259210
+      size: 2197
+    - path: data/01_raw
+      hash: md5
+      md5: 10527a9c9e898c6b062b9bf3a3d0d242.dir
+      size: 77971900
+      nfiles: 12
+    - path: data/03_intermediate
+      hash: md5
+      md5: d04923e7750ce32069847ed4a2e7734e.dir
+      size: 72961144
+      nfiles: 3
+    - path: src/covid19df/pipelines/clasificacion/nodes.py
+      hash: md5
+      md5: c7d96872f3cf55f9fdb05ba8b09baf8e
+      size: 8555
+    outs:
+    - path: data/05_train/classification_comparison.csv
+      hash: md5
+      md5: da9bd2bb40541a2967845c8e0e2abee1
+      size: 725
+    - path: data/05_train/classification_comparison.png
+      hash: md5
+      md5: 2347f3249b7d59c94e2c1c1c8830a4f7
+      size: 86616

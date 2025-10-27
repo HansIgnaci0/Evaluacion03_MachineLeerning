@@ -1,0 +1,13 @@
+column,missing_values,duplicated_rows
+Date,0,0
+Confirmed,0,0
+Deaths,0,0
+Recovered,0,0
+Active,0,0
+New cases,0,0
+New deaths,0,0
+New recovered,0,0
+Deaths / 100 Cases,0,0
+Recovered / 100 Cases,0,0
+Deaths / 100 Recovered,0,0
+No. of countries,0,0

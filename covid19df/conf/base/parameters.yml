@@ -1,0 +1,9 @@
+dataset1_name: "country_wise_latest"
+dataset2_name: "covid_19_clean_complete"
+dataset3_name: "day_wise"
+dataset4_name: "full_grouped"
+dataset5_name: "usa_county_wise"
+dataset6_name: "worldometer_data"
+covid_csv: "data/03_intermediate/covid_19_clean_complete_CLEAN.csv"
+usa_csv: "data/03_intermediate/usa_county_wise_CLEAN.csv"
+

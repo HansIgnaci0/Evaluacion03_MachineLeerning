@@ -1,0 +1,17 @@
+column,missing_values,duplicated_rows
+Country/Region,0,0
+Continent,1,0
+Population,1,0
+TotalCases,0,0
+NewCases,205,0
+TotalDeaths,21,0
+NewDeaths,206,0
+TotalRecovered,4,0
+NewRecovered,206,0
+ActiveCases,4,0
+"Serious,Critical",87,0
+Tot Cases/1M pop,1,0
+Deaths/1M pop,22,0
+TotalTests,18,0
+Tests/1M pop,18,0
+WHO Region,25,0

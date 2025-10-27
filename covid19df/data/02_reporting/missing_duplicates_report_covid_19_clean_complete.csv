@@ -1,0 +1,11 @@
+column,missing_values,duplicated_rows
+Province/State,34404,0
+Country/Region,0,0
+Lat,0,0
+Long,0,0
+Date,0,0
+Confirmed,0,0
+Deaths,0,0
+Recovered,0,0
+Active,0,0
+WHO Region,0,0

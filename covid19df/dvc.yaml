@@ -1,0 +1,23 @@
+stages:
+  train_regression:
+    cmd: kedro run --pipeline regresion
+    deps:
+      - src/covid19df/pipelines/regresion/nodes.py
+      - conf/base/catalog.yml
+      - data/01_raw
+      - data/03_intermediate
+    outs:
+      # *** ELIMINADO: data/05_train/regression_metrics.json
+      - data/05_train/regression_comparison.csv
+      - data/05_train/regression_comparison.png 
+  train_classification:
+    cmd: kedro run --pipeline clasificacion
+    deps:
+      - src/covid19df/pipelines/clasificacion/nodes.py
+      - conf/base/catalog.yml
+      - data/01_raw
+      - data/03_intermediate
+    outs:
+      # *** ELIMINADO: data/05_train/classification_metrics.json
+      - data/05_train/classification_comparison.csv
+      - data/05_train/classification_comparison.png

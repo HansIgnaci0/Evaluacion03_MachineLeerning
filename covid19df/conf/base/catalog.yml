@@ -1,0 +1,88 @@
+# Here you can define all your datasets by using simple YAML syntax.
+#
+# Documentation for this file format can be found in "The Data Catalog"
+# Link: https://docs.kedro.org/en/stable/data/data_catalog.html
+country_wise_latest:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/country_wise_latest.csv
+
+covid_19_clean_complete:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/covid_19_clean_complete.csv
+
+
+day_wise:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/day_wise.csv
+
+full_grouped:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/full_grouped.csv
+
+usa_county_wise:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/usa_county_wise.csv
+
+worldometer_data:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/worldometer_data.csv
+
+covid_cases_plot:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/04_models/covid_cases.png
+  save_args:
+    dpi: 300
+    bbox_inches: tight
+
+df1:
+  type: pandas.CSVDataset
+  filepath: data/03_intermediate/covid_19_clean_complete_CLEAN.csv
+
+df2:
+  type: pandas.CSVDataset
+  filepath: data/03_intermediate/usa_county_wise_CLEAN.csv
+
+parameters:
+  type: kedro.extras.datasets.yaml.YAMLDataSet
+  filepath: conf/base/parameters.yml
+
+
+# Outputs comparativos y gráficos para pipelines
+regression_comparison:
+  type: pandas.CSVDataset
+  filepath: data/05_train/regression_comparison.csv
+
+regression_comparison_plot:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/05_train/regression_comparison.png
+  save_args:
+    dpi: 200
+    bbox_inches: tight
+
+classification_comparison:
+  type: pandas.CSVDataset
+  filepath: data/05_train/classification_comparison.csv
+
+classification_comparison_plot:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/05_train/classification_comparison.png
+  save_args:
+    dpi: 200
+    bbox_inches: tight
+
+regression_best_model:
+  type: pickle.PickleDataSet
+  filepath: data/05_train/regression_best_model.pkl
+
+regression_metrics:
+  type: json.JSONDataSet
+  filepath: data/05_train/regression_metrics.json
+
+classification_best_model:
+  type: pickle.PickleDataSet
+  filepath: data/05_train/classification_best_model.pkl
+
+classification_metrics:
+  type: json.JSONDataSet
+  filepath: data/05_train/classification_metrics.json
+

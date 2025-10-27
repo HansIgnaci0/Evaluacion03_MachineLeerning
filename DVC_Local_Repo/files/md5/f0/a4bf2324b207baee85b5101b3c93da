@@ -1,0 +1,6 @@
+model,best_params,cv_r2_mean,test_r2,test_mae,test_rmse
+LinearRegression,"{'fit_intercept': True, 'positive': False}",1.0,1.0,4.675804632370273e-12,1.2032294335665008e-11
+DecisionTree,"{'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 2}",0.9136507855262661,0.9834397012696421,7.225481107422712,71.75513875136727
+GradientBoosting,"{'learning_rate': 0.1, 'max_depth': 3, 'n_estimators': 200}",0.9604505986650789,0.9814496365070808,8.119103481268645,75.94429191210831
+RandomForest,"{'max_depth': 10, 'min_samples_split': 2, 'n_estimators': 200}",0.9442561433289693,0.9810891782823639,7.904434906356067,76.67859124961515
+KNeighbors,"{'n_neighbors': 3, 'weights': 'distance'}",0.8891590303984854,0.9333619527244269,12.422016348241367,143.9395220639833
