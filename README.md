@@ -37,32 +37,32 @@ Sistema completo de **Machine Learning** con arquitectura **MLOps** para anális
 El proyecto sigue una estructura basada en **MLOps y pipelines modulares**:
 
 DVC_Local_Repo #Configuracion del versionado DVC
-
+│
 covid19df/
 
 │
 
-├─ airflow/
+  ├─ airflow/
 
-  │ ├─ dags # Ubicacion de ambos dags de airflow
+   │ ├─ dags # Ubicacion de ambos dags de airflow
 
-├─ data/ # Datasets (raw, processed, etc.)
+  ├─ data/ # Datasets (raw, processed, etc.)
 
-├─ notebooks/ # Notebooks de análisis exploratorio
+  ├─ notebooks/ # Notebooks de análisis exploratorio
 
-├─ src/ # Código fuente de pipelines y nodos
+  ├─ src/ # Código fuente de pipelines y nodos
 
-│ ├─ pipelines/
+  │ ├─ pipelines/
 
-│ ├─ nodes/
+  │ ├─ nodes/
 
-│ └─ utils/
+  │ └─ utils/
+  
+  ├─ conf/ # Configuraciones de Kedro y DVC
 
-├─ conf/ # Configuraciones de Kedro y DVC
+  ├─ logs/ # Logs de ejecución
 
-├─ logs/ # Logs de ejecución
-
-└─ README.md
+  └─ README.md
 
 
 ---
