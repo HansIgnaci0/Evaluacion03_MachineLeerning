@@ -91,7 +91,7 @@ cd covid19DF
 2.-Activar entorno virtual:
 ```bash
 covid19DF_Ev02-main\covid19DF_Ev02-main\covid19df
-venv\Scripts\activate          # Windows
+.\venv_kedro\Scripts\activate.ps1         # Windows
 ````
 3.- Instalar las dependencias
 ```bash
