@@ -88,10 +88,9 @@ covid19df/
 git clone https://github.com/HansIgnaci0/covid19DF_Ev02.git
 cd covid19DF
 ````
-2.-Crear y activar entorno virtual:
+2.-Activar entorno virtual:
 ```bash
-python -m venv venv
-source venv/bin/activate       # Linux/Mac
+covid19DF_Ev02-main\covid19DF_Ev02-main\covid19df
 venv\Scripts\activate          # Windows
 ````
 3.- Instalar las dependencias
@@ -101,7 +100,7 @@ pip install -r requirements.txt
 4.- Inicializar DVC
 ```bash
 dvc init
-dvc pull
+dvc repro
 ````
 
 Regresión
@@ -119,7 +118,7 @@ Agrupa datos para identificar patrones y clusters relevantes.
 Ejecutar un pipeline:
 
 ```bash
-kedro run --pipeline <clasificacion>
+kedro run --pipeline clasificacion
 ````
 🚀 Uso
 
