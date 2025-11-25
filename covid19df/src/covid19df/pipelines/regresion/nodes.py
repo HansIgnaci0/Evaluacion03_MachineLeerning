@@ -9,28 +9,23 @@ from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
 
+
 def load_and_prepare_data(covid_csv: str, usa_csv: str, n_rows: int = 20000):
-    # Cargar CSVs
     df_covid = pd.read_csv(covid_csv).head(n_rows)
     df_usa = pd.read_csv(usa_csv).head(n_rows)
 
-    # Seleccionar columnas disponibles (solo numéricas)
     covid_cols = [c for c in df_covid.columns if df_covid[c].dtype != 'O']
     usa_cols = [c for c in df_usa.columns if df_usa[c].dtype != 'O']
 
     df_covid_sel = df_covid[covid_cols].fillna(0)
     df_usa_sel = df_usa[usa_cols].fillna(0)
 
-    # Renombrar para evitar conflicto de nombres
     df_covid_sel = df_covid_sel.add_suffix("_covid")
     df_usa_sel = df_usa_sel.add_suffix("_usa")
 
-    # Combinar ambos datasets horizontalmente
     df_combined = pd.concat([df_covid_sel, df_usa_sel], axis=1)
 
-    # Definir variable objetivo y features
     if "Deaths_covid" not in df_combined.columns:
-        # Si no existe, usar cualquier columna numérica como target temporal
         target = df_combined.columns[0]
     else:
         target = "Deaths_covid"
@@ -44,7 +39,6 @@ def load_and_prepare_data(covid_csv: str, usa_csv: str, n_rows: int = 20000):
 
 def _metrics_heatmap_figure(df: pd.DataFrame, title: str):
     """Crea una figura tipo heatmap (sin seaborn) a partir de un DataFrame de métricas."""
-    # Asegurar solo columnas numéricas
     met_df = df.select_dtypes(include=[np.number])
     fig, ax = plt.subplots(figsize=(1.8 + 1.2 * met_df.shape[1], 1.5 + 0.6 * met_df.shape[0]))
     im = ax.imshow(met_df.values, cmap="viridis")
@@ -53,7 +47,6 @@ def _metrics_heatmap_figure(df: pd.DataFrame, title: str):
     ax.set_yticks(range(met_df.shape[0]))
     ax.set_yticklabels(df["model"].tolist() if "model" in df.columns else df.index.tolist())
     ax.set_title(title)
-    # Anotar valores
     for i in range(met_df.shape[0]):
         for j in range(met_df.shape[1]):
             ax.text(j, i, f"{met_df.values[i, j]:.3f}", ha="center", va="center", color="w", fontsize=8)
@@ -63,9 +56,7 @@ def _metrics_heatmap_figure(df: pd.DataFrame, title: str):
 
 def train_models(X, y):
     """Compatibilidad: mantiene el entrenamiento simple e imprime métricas básicas."""
-    # Delegar al gridsearch con parámetros por defecto y no guardar outputs.
     comparison_df, fig = train_models_gridsearch(X, y, save_plots=False)
-    # Imprimir un resumen rápido en consola para mantener el comportamiento previo
     print("\n📊 Resumen (test set, GridSearchCV):")
     for _, row in comparison_df.iterrows():
         print(
@@ -89,10 +80,8 @@ def train_models_gridsearch(X, y, save_plots: bool = True):
         fig = plt.figure()
         return empty_df, fig
 
-    # Train/test split
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-    # Escalado
     scaler = StandardScaler()
     X_train_scaled = scaler.fit_transform(X_train)
     X_test_scaled = scaler.transform(X_test)

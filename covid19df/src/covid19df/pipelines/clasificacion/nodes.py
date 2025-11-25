@@ -10,14 +10,6 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score, f1_score, roc_auc_score
 
 def load_and_prepare_data_classif(covid_csv: str, usa_csv: str, n_rows: int = 20000):
-    """
-    Carga y combina features numéricas de dos CSVs (covid y usa) igual que en regresión,
-    y construye un objetivo binario para clasificación basado en Deaths_covid.
-
-    - X: todas las columnas numéricas de ambos CSVs, con sufijos "_covid" y "_usa".
-    - y: 1 si Deaths_covid > 0; 0 en caso contrario. Si no existe Deaths_covid, se
-         toma la primera columna numérica de covid como target y se binariza por > 0.
-    """
     # Cargar CSVs
     df_covid = pd.read_csv(covid_csv).head(n_rows)
     df_usa = pd.read_csv(usa_csv).head(n_rows)

@@ -23,3 +23,4 @@ ENV PYTHONUNBUFFERED=1
 
 # 7️⃣ Comando por defecto: ejecutar el pipeline completo
 CMD ["kedro", "run"]
+# askdasmdksa
