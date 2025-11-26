@@ -19,8 +19,8 @@ stages:
       nfiles: 3
     - path: src/covid19df/pipelines/regresion/nodes.py
       hash: md5
-      md5: f8f74d2ae977a6b29afcbe7d1e260221
-      size: 6735
+      md5: 9ca21559ac75bf6ab6acfd0697404390
+      size: 6173
     outs:
     - path: data/05_train/regression_comparison.csv
       hash: md5
@@ -49,8 +49,8 @@ stages:
       nfiles: 3
     - path: src/covid19df/pipelines/clasificacion/nodes.py
       hash: md5
-      md5: c7d96872f3cf55f9fdb05ba8b09baf8e
-      size: 8555
+      md5: bce5d18a885c9a35943dae3d158fd8e2
+      size: 8104
     outs:
     - path: data/05_train/classification_comparison.csv
       hash: md5
