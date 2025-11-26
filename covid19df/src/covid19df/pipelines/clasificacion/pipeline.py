@@ -18,3 +18,12 @@ def create_classification_pipeline(**kwargs):
             ),
         ]
     )
+
+
+def create_pipeline(**kwargs):
+    """Compatibilidad: Kedro espera `create_pipeline`.
+
+    Wrapper que delega en `create_classification_pipeline` para mantener
+    compatibilidad con `pipeline_registry`.
+    """
+    return create_classification_pipeline(**kwargs)

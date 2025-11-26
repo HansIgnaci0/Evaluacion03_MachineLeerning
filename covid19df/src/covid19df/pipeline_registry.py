@@ -29,13 +29,9 @@ def register_pipelines():
     # Clasificación usa un nombre de creador distinto en algunos módulos
     try_register("clasificacion", "covid19df.pipelines.clasificacion", create_name="create_pipeline")
 
-    # Pipelines opcionales/experimentales
-    try_register(
-        "clustering_noSupervisado",
-        "covid19df.pipelines.unsupervised.clustering",
-        create_name="create_pipeline",
-    )
-    try_register("reduccion_dimensionalidad", "covid19df.pipelines.unsupervised.reduction")
+    # Pipelines opcionales/experimentales (omitidas actualmente por estabilidad)
+    # Nota: se omite la carga de pipelines `unsupervised` para mantener el
+    # proyecto enfocado en EDA, clasificación y regresión según petición del usuario.
 
     # Definir __default__ de forma segura (prefiere eda, luego regresion, luego clasificacion)
     pipelines["__default__"] = (
