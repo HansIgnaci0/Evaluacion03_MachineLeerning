@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 default_args = {
     'owner': 'hansi',
     'depends_on_past': False,
-    'email': ['tu_email@example.com'],  # Cambia a tu correo
+    'email': ['tu_email@example.com'], 
     'email_on_failure': False,
     'email_on_retry': False,
     'retries': 1,
