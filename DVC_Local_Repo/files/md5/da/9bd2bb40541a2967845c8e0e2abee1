@@ -1,6 +1,0 @@
-model,best_params,cv_f1_mean,test_accuracy,test_f1,test_roc_auc
-RandomForest,"{'max_depth': None, 'min_samples_split': 2, 'n_estimators': 200}",0.9252230114690405,0.9715,0.9380434782608695,0.9953787720762064
-DecisionTree,"{'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2}",0.9199283212204625,0.96875,0.9332621462893753,0.9552530941454596
-GradientBoosting,"{'learning_rate': 0.1, 'max_depth': 3, 'n_estimators': 200}",0.9124967812033518,0.96275,0.9179966978536048,0.993456403838131
-LogisticRegression,{'C': 10.0},0.7014037946889027,0.88875,0.7138263665594855,0.9278942428035044
-KNeighbors,"{'n_neighbors': 5, 'weights': 'distance'}",0.554594640120787,0.83975,0.5877813504823152,0.7928718189403422
