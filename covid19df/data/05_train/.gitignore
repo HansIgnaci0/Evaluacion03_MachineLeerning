@@ -2,3 +2,7 @@
 /regression_comparison.png
 /classification_comparison.csv
 /classification_comparison.png
+/kmeans_labels.csv
+/kmeans_metrics.csv
+/kmeans_elbow.png
+/kmeans_plot.png

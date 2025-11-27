@@ -21,3 +21,47 @@ stages:
       # *** ELIMINADO: data/05_train/classification_metrics.json
       - data/05_train/classification_comparison.csv
       - data/05_train/classification_comparison.png
+
+  kmeans_run:
+    cmd: kedro run --pipeline kmeans
+    deps:
+      - src/covid19df/pipelines/kmeans/nodes.py
+      - src/covid19df/pipelines/kmeans/pipeline.py
+      - conf/base/catalog.yml
+      - conf/base/parameters.yml
+      - data/03_intermediate/covid_19_clean_complete_CLEAN.csv
+    outs:
+      - data/03_intermediate/X_features_kmeans.csv
+      - data/05_train/kmeans_labels.csv
+      - data/05_train/kmeans_metrics.csv
+      - data/05_train/kmeans_elbow.png
+      - data/05_train/kmeans_plot.png
+
+  jerarquico_run:
+    cmd: kedro run --pipeline jerarquico
+    deps:
+      - src/covid19df/pipelines/jerarquico/nodes.py
+      - src/covid19df/pipelines/jerarquico/pipeline.py
+      - conf/base/catalog.yml
+      - conf/base/parameters.yml
+      - data/03_intermediate/covid_19_clean_complete_CLEAN.csv
+    outs:
+      - data/03_intermediate/X_features_jerarquico.csv
+      - data/05_train/jerarquico_labels.csv
+      - data/05_train/jerarquico_metrics.csv
+      - data/05_train/jerarquico_plot.png
+      - data/05_train/jerarquico_dendrogram.png
+
+  gmm_run:
+    cmd: kedro run --pipeline gmm
+    deps:
+      - src/covid19df/pipelines/gmm/nodes.py
+      - src/covid19df/pipelines/gmm/pipeline.py
+      - conf/base/catalog.yml
+      - conf/base/parameters.yml
+      - data/03_intermediate/covid_19_clean_complete_CLEAN.csv
+    outs:
+      - data/03_intermediate/X_features_gmm.csv
+      - data/05_train/gmm_labels.csv
+      - data/05_train/gmm_metrics.csv
+      - data/05_train/gmm_plot.png

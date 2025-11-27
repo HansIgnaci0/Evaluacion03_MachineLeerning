@@ -86,3 +86,113 @@ classification_metrics:
   type: json.JSONDataSet
   filepath: data/05_train/classification_metrics.json
 
+# Datasets para reducción de dimensionalidad (PCA y t-SNE)
+pca_embeddings:
+  type: pandas.CSVDataset
+  filepath: data/03_intermediate/pca_embeddings.csv
+
+pca_loadings:
+  type: pandas.CSVDataset
+  filepath: data/03_intermediate/pca_loadings.csv
+
+pca_explained_variance:
+  type: pandas.CSVDataset
+  filepath: data/03_intermediate/pca_explained_variance.csv
+
+pca_biplot:
+  type: matplotlib.MatplotlibDataset
+  filepath: data/05_train/pca_biplot.png
+  save_args:
+    dpi: 200
+    bbox_inches: tight
+
+tsne_embeddings_2d:
+  type: pandas.CSVDataset
+  filepath: data/03_intermediate/tsne_embeddings_2d.csv
+
+tsne_embeddings_3d:
+  type: pandas.CSVDataset
+  filepath: data/03_intermediate/tsne_embeddings_3d.csv
+
+tsne_plot_2d:
+  type: matplotlib.MatplotlibDataset
+  filepath: data/05_train/tsne_plot_2d.png
+  save_args:
+    dpi: 200
+
+# KMeans
+X_features_kmeans:
+  type: pandas.CSVDataset
+  filepath: data/03_intermediate/X_features_kmeans.csv
+
+kmeans_labels:
+  type: pandas.CSVDataset
+  filepath: data/05_train/kmeans_labels.csv
+
+kmeans_plot:
+  type: matplotlib.MatplotlibDataset
+  filepath: data/05_train/kmeans_plot.png
+  save_args:
+    dpi: 120
+    bbox_inches: tight
+kmeans_metrics:
+  type: pandas.CSVDataset
+  filepath: data/05_train/kmeans_metrics.csv
+kmeans_elbow_plot:
+  type: matplotlib.MatplotlibDataset
+  filepath: data/05_train/kmeans_elbow.png
+  save_args:
+    dpi: 120
+    bbox_inches: tight
+
+# Jerárquico
+X_features_jerarquico:
+  type: pandas.CSVDataset
+  filepath: data/03_intermediate/X_features_jerarquico.csv
+
+jerarquico_labels:
+  type: pandas.CSVDataset
+  filepath: data/05_train/jerarquico_labels.csv
+
+jerarquico_plot:
+  type: matplotlib.MatplotlibDataset
+  filepath: data/05_train/jerarquico_plot.png
+  save_args:
+    dpi: 120
+    bbox_inches: tight
+jerarquico_metrics:
+  type: pandas.CSVDataset
+  filepath: data/05_train/jerarquico_metrics.csv
+jerarquico_dendrogram:
+  type: matplotlib.MatplotlibDataset
+  filepath: data/05_train/jerarquico_dendrogram.png
+  save_args:
+    dpi: 120
+    bbox_inches: tight
+
+# GMM
+X_features_gmm:
+  type: pandas.CSVDataset
+  filepath: data/03_intermediate/X_features_gmm.csv
+
+gmm_labels:
+  type: pandas.CSVDataset
+  filepath: data/05_train/gmm_labels.csv
+
+gmm_plot:
+  type: matplotlib.MatplotlibDataset
+  filepath: data/05_train/gmm_plot.png
+  save_args:
+    dpi: 120
+    bbox_inches: tight
+gmm_metrics:
+  type: pandas.CSVDataset
+  filepath: data/05_train/gmm_metrics.csv
+
+tsne_plot_3d:
+  type: matplotlib.MatplotlibDataset
+  filepath: data/05_train/tsne_plot_3d.png
+  save_args:
+    dpi: 200
+    bbox_inches: tight
+

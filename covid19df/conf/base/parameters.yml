@@ -7,3 +7,35 @@ dataset6_name: "worldometer_data"
 covid_csv: "data/03_intermediate/covid_19_clean_complete_CLEAN.csv"
 usa_csv: "data/03_intermediate/usa_county_wise_CLEAN.csv"
 
+
+# Parámetros para reducción de dimensionalidad (PCA y t-SNE)
+reduccion_dimensional:
+
+  n_pca_components: 10
+  tsne_perplexity: 30
+  tsne_n_iter: 1000
+  random_state: 42
+  tsne_max_samples_2d: 2000
+  tsne_max_samples_3d: 1000
+  tsne_enable_3d: true
+
+kmeans:
+  kmeans_n_clusters: 5
+  random_state: 42
+  kmeans_elbow_min_k: 2
+  kmeans_elbow_max_k: 10
+
+jerarquico:
+  jerarquico_n_clusters: 5
+  jerarquico_linkage: ward  # opciones: ward, complete, average, single
+  jerarquico_metric: euclidean
+  jerarquico_max_samples: 3000
+  jerarquico_random_state: 42
+
+gmm:
+  gmm_n_components: 5
+  gmm_covariance_type: full
+  gmm_max_samples: 5000
+  gmm_random_state: 42
+  gmm_reg_covar: 1.0e-6
+
