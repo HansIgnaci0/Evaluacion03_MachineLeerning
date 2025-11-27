@@ -1,6 +1,0 @@
-[core]
-    remote = local_storage
-['remote "drive_remote"']
-    url = gdrive://1eWvng3t4XVGxyIohpcPR0JKul9iiXjSS
-['remote "local_storage"']
-    url = C:\Users\hansi\Desktop\kedro\DVC_Local_Repo
